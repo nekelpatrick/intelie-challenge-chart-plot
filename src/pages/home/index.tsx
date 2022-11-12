@@ -8,7 +8,7 @@ import { Footer } from "../../components/footer"
 export const HomePage = () => {
   return (
     <div className="container-home">
-      <Header/>
+      <Header developerName="Patrick"/>
       <UserInput/>
       <Chart/>
       <Footer/>

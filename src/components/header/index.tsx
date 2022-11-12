@@ -1,7 +1,14 @@
-import React from 'react'
+import "./index.css"
 
-export const Header = () => {
+interface iDeveloperName {
+  developerName: string
+}
+
+
+export const Header = ({developerName}:iDeveloperName) => {
   return (
-    <h1>Header</h1>
+    <header className="header">
+      <h1>{developerName}'s Challenge</h1>
+    </header>
   )
 }

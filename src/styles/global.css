@@ -19,8 +19,8 @@
   --color-primary: #dddee1;
   --color-secundary: #2e3440;
   --color-third: #60656e;
-  --color-button-primary: #017eff;
-  --color-font-primary: #3a404b;
+  --color-btn-primary: #017eff;
+  --color-text-primary: #3a404b;
 }
 
 a {
