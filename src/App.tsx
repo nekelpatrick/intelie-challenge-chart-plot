@@ -1,10 +1,12 @@
 import './styles/global.css';
 
+import { HomePage } from './pages/home';
+
 function App() {
 
   return (
     <div>
-      <h1>Intelie test</h1>
+      <HomePage/>
     </div>
   )
 }
