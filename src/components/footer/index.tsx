@@ -1,7 +1,13 @@
-import React from 'react'
+export const Footer = ({ generateChart }:any) => {
+  const handleClick = () => {
+    generateChart();
+  };
 
-export const Footer = () => {
   return (
-    <h1>Footer</h1>
-  )
+    <div className={"footerDiv"}>
+      <button className={"btn"} onClick={handleClick}>
+        Generate Chart
+      </button>
+    </div>
+  );
 }
