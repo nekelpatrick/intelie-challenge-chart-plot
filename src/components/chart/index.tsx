@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   LineChart,
   Line,
@@ -8,31 +7,32 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
+} from "recharts";
+
+import "./styles.css";
 
 interface IChartData {
-  data:any,
-  minLimit: number,
-  maxLimit:number
-  
+  data: any;
+  minLimit: number;
+  maxLimit: number;
 }
 
-export const Chart = ({ data, minLimit, maxLimit }:IChartData) => {
-  const timestampFormmater = (item:any) => {
+export const Chart = ({ data, minLimit, maxLimit }: IChartData) => {
+  const timestampFormmater = (item: any) => {
     const diff = item - minLimit;
     const hours = Number(diff / (60 * 60 * 1000));
     const minutes = Number((diff % (60 * 60 * 1000)) / 60000);
     return (
-      (hours < 10 ? '0' : '') +
+      (hours < 10 ? "0" : "") +
       hours.toString() +
-      ':' +
-      (minutes < 10 ? '0' : '') +
+      ":" +
+      (minutes < 10 ? "0" : "") +
       minutes.toString()
     );
   };
 
   return (
-    <div style={{ width: '100%', marginTop: '10px' }}>
+    <div className="chart-area" style={{ width: "100%", marginTop: "10px" }}>
       <ResponsiveContainer width="90%" minHeight={300}>
         <LineChart
           width={900}
@@ -53,7 +53,7 @@ export const Chart = ({ data, minLimit, maxLimit }:IChartData) => {
           <YAxis dataKey="value" hide={true} />
           <Tooltip labelFormatter={timestampFormmater} />
 
-          {data.map((serie:any) => (
+          {data.map((serie: any) => (
             <Line
               dataKey="value"
               data={serie.data}
@@ -75,4 +75,4 @@ export const Chart = ({ data, minLimit, maxLimit }:IChartData) => {
       </ResponsiveContainer>
     </div>
   );
-}
+};

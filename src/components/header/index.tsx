@@ -1,14 +1,13 @@
-import "./index.css"
+import "./styles.css";
 
 interface iDeveloperName {
-  developerName: string
+  developerName: string;
 }
 
-
-export const Header = ({developerName}:iDeveloperName) => {
+export const Header = ({ developerName }: iDeveloperName) => {
   return (
     <header className="header">
       <h1>{developerName}'s Challenge</h1>
     </header>
-  )
-}
+  );
+};

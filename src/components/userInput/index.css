@@ -1,6 +1,7 @@
 .inputText {
   height: 100% !important;
   font-family: source-code-pro, Menlo, "Courier New", monospace;
+  overflow: hidden;
 }
 
 .handleBottom {
