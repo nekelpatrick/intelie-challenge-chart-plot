@@ -37,8 +37,6 @@ useEffect(() => {
 
 const handleBtnClick = () => {
   setParsedInput(codeParse(inputData));
-  //when parsedInput state changes, it will trigger the useEffect hook
-  //calling the updateData() function
 };
 
 

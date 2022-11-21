@@ -20,9 +20,8 @@ interface IChartData {
 export const Chart = ({ data, minLimit, maxLimit }:IChartData) => {
   const timestampFormmater = (item:any) => {
     const diff = item - minLimit;
-    const diffString:any = diff.toString()
-    const hours = Number(diffString / (60 * 60 * 1000));
-    const minutes = Number((diffString % (60 * 60 * 1000)) / 60000);
+    const hours = Number(diff / (60 * 60 * 1000));
+    const minutes = Number((diff % (60 * 60 * 1000)) / 60000);
     return (
       (hours < 10 ? '0' : '') +
       hours.toString() +
