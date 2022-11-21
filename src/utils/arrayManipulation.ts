@@ -1,5 +1,4 @@
-/**Insert data obj in the array using an ascending order algorithm */
-export const insertAndSort = (array, obj) => {
+export const insertAndSort = (array:any, obj:any) => {
   let arr = [...array];
   let insertIndex = 0;
   let newTS = obj.timestamp;
