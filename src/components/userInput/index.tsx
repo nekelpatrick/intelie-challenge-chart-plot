@@ -4,6 +4,8 @@ import { oneDark } from "@codemirror/theme-one-dark";
 import { Resizable } from "re-resizable";
 import "./index.css";
 
+import { MdDragHandle } from "react-icons/md";
+
 interface iUserInputValue {
   onInput: any;
   value: string;
@@ -15,7 +17,14 @@ export const UserInput = ({ onInput, value }: iUserInputValue) => {
     onInput(value);
   };
 
-  const CustomHandle = () => <div className="handleBottom"></div>;
+  const CustomHandle: any = () => (
+    <div className="handleBottom">
+      {" "}
+      <MdDragHandle
+        style={{ height: "35px", width: "60px", color: "#6d7082" }}
+      />
+    </div>
+  );
 
   const BottomRightHandle = () => <CustomHandle></CustomHandle>;
 
@@ -35,7 +44,7 @@ export const UserInput = ({ onInput, value }: iUserInputValue) => {
       // className="chart-parent"
       defaultSize={{
         width: "100%",
-        height: 350,
+        height: 300,
       }}
     >
       <CodeMirror

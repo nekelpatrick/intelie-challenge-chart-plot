@@ -32,12 +32,12 @@ export const Chart = ({ data, minLimit, maxLimit }: IChartData) => {
   };
 
   return (
-    <div className="chart-area" style={{ width: "100%", marginTop: "20px" }}>
+    <div className="chart-area" style={{ width: "100%", marginTop: "30px" }}>
       <ResponsiveContainer width="90%" minHeight={400}>
         <LineChart
           width={900}
           height={300}
-          margin={{ top: 15, right: 50, left: 20, bottom: 5 }}
+          margin={{ top: 20, right: 50, left: 20, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis
@@ -46,9 +46,10 @@ export const Chart = ({ data, minLimit, maxLimit }: IChartData) => {
             interval={0}
             domain={[minLimit, maxLimit]}
             tickFormatter={timestampFormmater}
-            allowDataOverflow={true}
+            allowDataOverflow={false}
             padding={{ left: 30, right: 30 }}
             tickCount={0}
+            height={100}
           />
           <YAxis dataKey="value" hide={true} />
           <Tooltip labelFormatter={timestampFormmater} />
