@@ -5,12 +5,12 @@ import { UserInput } from "../../components/userInput"
 import { Chart } from "../../components/chart"
 import { Footer } from "../../components/footer"
 
-import { useEffect, useState } from "react"
+import { SetStateAction, useEffect, useState } from "react"
 import {codeParse, processCode } from "../../utils/codeConverter"
 
 export const HomePage = () => {
   
-  const [inputData, setInputData] = useState(`{type: 'start', timestamp: 1519862400000,select: ['min_response_time', 'max_response_time'],group: ['os', 'browser']}
+  const [inputData, setInputData] = useState<string>(`{type: 'start', timestamp: 1519862400000,select: ['min_response_time', 'max_response_time'],group: ['os', 'browser']}
 {type: 'span', timestamp: 1519862400000, begin: 1519862400000, end: 1519862460000}
 {type: 'data', timestamp: 1519862400000, os: 'linux', browser: 'chrome', min_response_time: 0.1, max_response_time: 1.3}
 {type: 'data', timestamp: 1519862400000, os: 'mac', browser: 'chrome', min_response_time: 0.2, max_response_time: 1.2}
@@ -23,7 +23,7 @@ export const HomePage = () => {
 {type: 'stop', timestamp: 1519862460000}`);
 
 
-const [parsedInput, setParsedInput] = useState(null);
+const [parsedInput, setParsedInput] = useState<any>(null);
 const [data, setData] = useState([]);
 const [beginInterval, setBeginInterval] = useState(0);
 const [endInterval, setEndInterval] = useState(0);
@@ -52,7 +52,7 @@ const handleBtnClick = () => {
       updateChart(chartData, begin, end);
     };
 
-  const updateChart = (chartData, begin, end) => {
+  const updateChart = (chartData: SetStateAction<never[]>, begin: SetStateAction<number>, end: SetStateAction<number>) => {
     setData(chartData);
     setBeginInterval(begin);
     setEndInterval(end);
