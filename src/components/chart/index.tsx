@@ -10,18 +10,19 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-interface iChartData {
+interface IChartData {
   data:any,
   minLimit: number,
   maxLimit:number
   
 }
 
-export const Chart = ({ data, minLimit, maxLimit }:iChartData) => {
+export const Chart = ({ data, minLimit, maxLimit }:IChartData) => {
   const timestampFormmater = (item:any) => {
     const diff = item - minLimit;
-    const hours = parseInt(diff / (60 * 60 * 1000));
-    const minutes = parseInt((diff % (60 * 60 * 1000)) / 60000);
+    const diffString:any = diff.toString()
+    const hours = Number(diffString / (60 * 60 * 1000));
+    const minutes = Number((diffString % (60 * 60 * 1000)) / 60000);
     return (
       (hours < 10 ? '0' : '') +
       hours.toString() +
