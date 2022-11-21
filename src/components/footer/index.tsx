@@ -1,4 +1,6 @@
-export const Footer = ({ generateChart }:any) => {
+import "./styles.css";
+
+export const Footer = ({ generateChart }: any) => {
   const handleClick = () => {
     generateChart();
   };
@@ -10,4 +12,4 @@ export const Footer = ({ generateChart }:any) => {
       </button>
     </div>
   );
-}
+};
