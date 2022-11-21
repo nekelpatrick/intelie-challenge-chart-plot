@@ -32,8 +32,8 @@ export const Chart = ({ data, minLimit, maxLimit }: IChartData) => {
   };
 
   return (
-    <div className="chart-area" style={{ width: "100%", marginTop: "10px" }}>
-      <ResponsiveContainer width="90%" minHeight={300}>
+    <div className="chart-area" style={{ width: "100%", marginTop: "20px" }}>
+      <ResponsiveContainer width="90%" minHeight={400}>
         <LineChart
           width={900}
           height={300}
