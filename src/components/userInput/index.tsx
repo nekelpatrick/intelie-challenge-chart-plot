@@ -32,12 +32,16 @@ export const UserInput = ({ onInput, value }: iUserInputValue) => {
         bottomLeft: false,
         topLeft: false,
       }}
-      minHeight={150}
+      // className="chart-parent"
+      defaultSize={{
+        width: "100%",
+        height: 350,
+      }}
     >
       <CodeMirror
         className="inputText"
         width="100vw"
-        height="40vh"
+        height="100%"
         theme={oneDark}
         value={value}
         extensions={[javascript({ jsx: true })]}
